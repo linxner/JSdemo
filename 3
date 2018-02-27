@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>博雅首页</title>
+</head>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.c1{
+		clear: both;
+	}
+	body{
+		/*给全局加一个字体，字号，还有足够的高*/
+		font-family: "Microsoft YaHei","SimSun" ;
+		font-size: 14px;
+		height: 8888px;
+	}
+	.boya{
+		height: 58px;
+		background-color: #191d3a;
+	}
+	.inner{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	.inner .logo{
+		float: left;
+		width: 185px;
+		margin-right: 40px;
+	}
+	.boya .inner ul{
+		/*清楚列表左边小圆点*/
+		list-style: none;
+	}
+	.boya .inner ul li{
+		float: left;
+		width: 100px;
+		border-left: 1px solid #374171;
+	}
+	.boya .inner ul li.last{
+		border-right: 1px solid #374171;
+	}
+	.boya .inner ul li a{
+		/*转块，将行内元素转成块级元素*/
+		display: block;  
+		line-height: 58px;
+		/*文本居中*/
+		text-align: center;
+		/*去掉下划线*/
+		text-decoration: none;
+		color: #818496;
+	}
+	.boya .inner ul li a:hover{
+		/*鼠标悬停背景颜色与前景颜色变化*/
+		background-color: #374171;
+		color: #e2e4ed;
+	}
+	.boya .inner .jrwm{
+		float: left;
+		margin: 12px;
+		margin-left: 48px;
+		width: 100px;
+		height: 34px;
+		background-color: #38b774;
+		border-radius: 4px;
+	}
+	.boya .inner .jrwm p a{
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		line-height: 34px;
+		color: white;
+	}
+	.boya .inner .jrwm p a:hover{
+		background-color: gold;
+	}
+	.banner{
+		height: 465px;
+		background: url(images/banner.jpg) no-repeat center top;
+	}
+	.content{
+		background: url(images/indexmainbg.jpg) no-repeat center bottom;
+		margin-top: 50px;
+		height: 650px;
+	}
+	.content .pic{
+		height: 229px;
+		border-bottom: 1px solid #dbe1e7;
+	}
+	.content .pic ul{
+		list-style: none;
+	}
+	.content .pic ul li{
+		float: left;
+		width: 218px;
+		margin-right: 43px;
+
+	}
+	.content .pic ul li.last{
+		width:217px; 
+		margin-right: 0;
+	}
+	.content .pic ul li p img{
+		/*自动充满盒子的宽度*/
+		width: 100%;
+		height: 130px;
+	}
+	
+	.content .pic ul li h3{
+		display: block;
+	    font-weight: bold;
+		margin-top: 3px;
+		line-height: 36px;
+		text-align: center;
+		font-size: 14px;
+	}
+	.content .pic ul li p.djbf{
+    	text-align: center;
+		line-height: 16px;
+    }
+    .content .pic ul li p.djbf a{
+    	font-size: 12px;
+		color:#38B774;
+		text-decoration: none;
+		padding-right: 10px;
+		background:url(images/sanjiaoxing.png) no-repeat right 3px;
+		
+    }
+    .main{
+    	margin-top: 53px;
+    }
+    .main .news{
+    	float: left;
+    	width: 500px;
+    	height: 197px;
+    	padding-top: 113px;
+    	background: url(images/bynewsbg.jpg) no-repeat center center;
+    }
+    .main .news ul{
+    	list-style: none;
+    }
+   .main .news ul li{ 
+   	    line-height: 50px;
+   	    border-bottom: 1px solid #dbe1e7;
+   	    margin-left: 20px;
+   	    margin-right: 20px;
+   }
+   .main .news ul li a{
+   	    text-decoration: none;
+   	    color: #444866;
+   }
+    .main .ad{
+    	float: left;
+    	width: 305px;
+    	height: 310px;
+    	padding-left: 20px;
+    	padding-right: 175px;
+    	background: url(images/byhrbg3.jpg) no-repeat center center;
+    }
+    .main .ad ul{
+
+    	list-style: none;
+    }
+    .main .ad h3{
+    	font-size: 12px;
+    	color: white;
+        padding-top: 113px;
+    	line-height: 18px;
+
+    }
+    .main .ad ul li a{
+    	font-size: 12px;
+    	text-decoration: none;
+    	color: white;
+    }
+    .main .ad ul li{
+    	line-height: 38px;
+    	border-bottom: 1px solid #6fdea3;
+
+
+    }
+</style>
+<body>
+	<!--  版心 -->
+	<div class="boya">
+		<!-- 导航条 -->
+		<div class="inner">
+			<!-- logo -->
+			<div class="logo">
+				<img src="images/logo.png" alt="" />
+			</div>
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">博雅游戏</a></li>
+				<li><a href="#">博雅新闻</a></li>
+				<li><a href="#">关于我们</a></li>
+				<li><a href="#">客服中心</a></li>
+				<li class="last"><a href="#">投资者关系</a></li>
+			</ul>
+			<div class="jrwm">
+				<p><a href="">加入我们</a></p>
+			</div>
+		</div>
+	</div>
+		<!-- 墙 -->
+	<div class="c1"></div>
+	<!-- 通栏 -->
+	<div class="banner"></div>
+	<!-- 图片 -->
+	<div class="content inner">
+		<div class="pic">
+	        <ul>
+	    	<li>
+	    		<p><img src="images/pro1.jpg" alt="" /></p>
+	    		<h3>BPT宣传片</h3>
+	    		<p class="djbf"><a href="#">点击播放</a></p>
+	    	</li>
+	    	<li>
+	    		<p><img src="images/pro2.jpg" alt="" /></p>
+	    		<h3>博雅互动宣传视频</h3>
+	    		<p class="djbf"><a href="#">点击播放</a></p>
+	    	</li>
+	    	<li>
+	    		<p><img src="images/pro3.jpg" alt="" /></p>
+	    		<h3>斗地主</h3>
+	    		<p class="djbf"><a href="#">点击播放</a></p>
+	    	</li>
+	    	<li class="last">
+	    		<p><img src="images/pro4.jpg" alt="" /></p>
+	    		<h3>德州扑克</h3>
+	    		<p class="djbf"><a href="#">点击播放</a></p>
+	    	</li>
+	        </ul>
+	    </div>
+	
+	<!-- 新闻招聘 -->
+	<div class="main inner">
+		<div class="news">
+			<ul>
+				<li><a href="#">09/28&nbsp;2015博雅国际扑克大赛（BPT）在澳门落幕</a></li>
+				<li><a href="#">08/26&nbsp;2015博雅国际扑克大赛重磅来袭</a></li>
+				<li><a href="#">08/01&nbsp;博雅互动与阿里游戏联手启动“淘宝杯首届电视棋牌大赛”</a></li>
+				<li><a href="#">07/21&nbsp;湖南省省长杜家豪一行参观博雅互动</a></li>
+			</ul>
+		</div>
+		<div class="ad">
+			
+			<h3>专场招聘岗位:</h3>
+			<ul>
+				<li><a href="#">PHP开发工程师</a></li>
+				<li><a href="#">C++开发工程师</a></li>
+				<li><a href="#">WEB前端开发工程师</a></li>
+				<li><a href="#">大数据开发工程师</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
