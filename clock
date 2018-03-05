@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 40px;
+            color: #d21512;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var demo=document.getElementById("box")
+    var endtime=new Date("2018/3/7")
+    setInterval(click,1000);
+    function click(){
+        var nowtime=new Date();
+        var second=parseInt((endtime.getTime()-nowtime.getTime())/1000);
+        var d=parseInt(second/3600/24);
+        var h=parseInt(second/3600%24);
+        var m=parseInt(second/60%60);
+        var s=parseInt(second%60);
+        d<10? d="0"+d :d;
+        h<10? h="0"+h :h;
+        m<10? m="0"+m :m;
+        s<10? s="0"+s :s;
+        demo.innerHTML="距离抢购时间还剩："+d+ "天"+h+ "小时"+m+ "分钟"+s+ "秒";
+    }
+</script>
+</body>
+</html>
