@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="demo"></div>
+</body>
+</html>
+<script>
+    var demo=document.getElementById("demo");
+    var count=5;
+    var speed=1000;
+    setTimeout(txt,speed);// 1秒钟后执行txt函数
+    function txt(){
+        count--;
+        demo.innerHTML="<a href='http://www.baidu.com'>页面将在"+count+"秒钟后跳转...</a>";
+        if(count<=0){
+            window.location="http://www.baidu.com"
+        }
+        else{
+           setTimeout(txt,speed) ;//递归，循环执行txt
+        }
+    }
+</script>

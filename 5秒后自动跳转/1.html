@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<textarea name="" id="1" cols="30" rows="10"></textarea><button id="btn">保留两位小数</button>
+<textarea name="" id="2" cols="30" rows="10"></textarea>
+</body>
+</html>
+<script>
+    function $(id){return document.getElementById(id)};
+    $("btn").onclick=function(){
+        var input=$("1").value;
+        var str=input+"";
+        $("2").value=parseInt(input)+str.substr(str.indexOf("."),3)
+    }
+</script>
