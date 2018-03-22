@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        border: 0 none;
+    }
+    .search{
+        width: 258px;
+        height: 40px;
+        margin: 100px auto;
+    }
+    .search input{
+        width: 208px;
+        height: 40px;
+        background: url(left.jpg) no-repeat;
+        outline-style: none;
+        padding-left: 8px;
+        color: #ccc;
+        float: left;
+
+    }
+    button{
+        height: 40px;
+        width: 42px;
+        float: left;
+    }
+    a{
+        display: block;
+    }
+
+</style>
+<script >
+    window.onload=function(){
+        var txt=document.getElementById("txt");
+        txt.onfocus=function() {
+               /*点击搜索框value值消失，并改变输入字体颜色*/
+            if (txt.value == "请输入...") {
+                txt.value = "";
+                txt.style.color="#333";
+            }
+        }
+        txt.onblur= function(){
+            /*点击其他地方value值复原*/
+            if (txt.value=="") {
+                txt.value = "请输入...";
+                txt.style.color = "#ccc";
+            }
+        }
+    }
+</script>
+<body>
+<div class="search">
+    <input type="text" value="请输入..." id="txt"/>
+    <button><a href="#"><img src="right.jpg" alt=""/></a></button>
+</div>
+</div>
+</body>
+</html>

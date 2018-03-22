@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 730px;
+            height: 454px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .box ul{
+            width: 700%;
+            height: 454px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            list-style: none;
+        }
+        .box ul li {
+            float: left;
+        }
+        .box ul li.first{
+            display: block;
+        }
+        .box .circle{
+            position: absolute;
+            left: 50%;
+            margin-left:-90px;
+            bottom:10px;
+        }
+        .box .circle span{
+            float: left;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: pink;
+            text-align: center;
+            line-height: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .circle span.current{
+            background-color: purple;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var scroll = document.getElementById("scroll");
+            var ul = scroll.children[0];
+            var num = 0; //控制左侧值  left
+            var timer = null;  // 定时器
+            timer = setInterval(autoPlay,20);
+            function autoPlay() {
+                num--;
+                //console.log(num);
+                num<=-1200 ? num = 0 : num;
+                ul.style.left = num + "px";
+            }
+            var bg=document.getElementById("bg");
+            var div=document.createElement("div");
+            bg.appendChild(div);
+            div.setAttribute("class","circle");
+            var ul=document.getElementById("ul");
+            var lis=ul.children;
+            for(var i=0;i<lis.length;i++){
+                var span=document.createElement("span")
+                div.appendChild(span);
+                span.innerHTML=i+1
+            }
+            var child=div.children;
+            child[0].setAttribute("class","current");
+            for(var i= 0;i<child.length;i++){
+                child[i].index=i
+                child[i].onmousemove=function(){
+                    for(var j= 0;j<child.length;j++){
+                        child[j].className=""
+                        lis[j].style.display="none"
+                    }
+                    child[this.index].className="current"
+                    lis[this.index].style.display="block"
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="box" id="bg">
+    <div class="slider" id="scroll">
+        <ul id="ul">
+            <li class="first"><img src="images/11.jpg" alt=""/></li>
+            <li><img src="images/22.jpg" alt=""/></li>
+            <li><img src="images/33.jpg" alt=""/></li>
+            <li><img src="images/44.jpg" alt=""/></li>
+            <li><img src="images/55.jpg" alt=""/></li>
+            <li><img src="images/66.jpg" alt=""/></li>
+            <li><img src="images/11.jpg" alt=""/></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
