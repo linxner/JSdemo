@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function(){
+            function getClass(classname)
+            {
+                if(document.getElementsByClassName)
+                {
+                    return document.getElementsByClassName(classname);
+                }
+                var arr = [];
+                var dom = document.getElementsByTagName("*");
+                for (var i = 0; i < dom.length; i++)
+                {
+                    var txtarr = dom[i].className.split(" ");//分割class类名
+                    // 以下例子分割为数组["text","cl"]
+                    for (var j = 0; j < txtarr.length; j++)
+                    {
+                        if (txtarr[j] == classname)
+                        {
+                            arr.push(dom[i]);//压人含有所需类名的元素
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="text cl"></div>
+<div></div>
+<div></div>
+<div class="text"></div>
+<div></div>
+<div></div>
+<div class="text cl"></div>
+<div></div>
+<div class="text"></div>
+<div></div>
+</body>
+</html>

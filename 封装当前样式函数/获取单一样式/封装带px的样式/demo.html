@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function animate(obj,attr,target){
+        clearInterval(obj.timer);  // 先清除定时器
+        obj.timer = setInterval(function() {
+            var current=parseInt(getStyle(obj,attr));
+            var step = (target -current)/10; //计算步长
+            step=step>0?Math.ceil(step):Math.floor(step);//取整步长
+            obj.style[attr] = current + step + "px";//只能用于单一的带px的样式
+            if(current==target){
+                clearInterval(obj.timer);
+            }
+        },30)
+    }
+    //用法，例如animate（demo，“width”，400）就是表示demo里面的宽度变为400px
+    function getStyle(obj,attr) {  //  谁的      那个属性
+        if(obj.currentStyle)  // ie 等
+        {
+            return obj.currentStyle[attr];  // 返回传递过来的某个属性
+        }
+        else
+        {
+            return window.getComputedStyle(obj,null)[attr];  // w3c 浏览器
+        }
+    }
+</script>

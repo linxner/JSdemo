@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //目的在于得到box下的text
+        window.onload=function() {
+            function getClass(id, classname) {
+                //分为支持和不支持
+                //如果支持
+                if (document.getElementsByClassName) {
+                    //又分为有id和没有id
+                    if (id) {//如果有id
+                        var eleid = document.getElementById(id);//获取id
+                        return eleid.getElementsByClassName(classname);//获取eleid下的类名
+                    }
+                    else {//如果没有id
+                        return document.getElementsByClassName(classname);//直接获取类名
+                    }
+                }
+                //如果不支持
+                if (id) {
+                    var eleid = document.getElementById(id);//获得id
+                    var dom = document.getElementsByClassName("*");//获取所有类名
+                }
+                //如果不支持
+                else {
+                    var dom = document.getElementsByClassName("*");//获取所有类名
+                }
+                var arr = [];
+                var dom = document.getElementsByTagName("*");
+                for (var i = 0; i < dom.length; i++) {
+                    var txtarr = dom[i].className.split(" ")//分割class类名
+                    // 以下例子分割为数组["text","cl"]
+                    for (var j = 0; j < txtarr.length; j++) {
+                        if (txtarr[j] == classname) {
+                            arr.push(dom[i])//压人含有所需类名的元素
+                        }
+                    }
+                }
+                return arr;
+            }
+
+            console.log(getClass("", "text"));
+            //如果要调用 只需getClass(id,classname)
+            //如下例子  getClass("box","text")得到box下面的text
+        }
+    </script>
+</head>
+<body>
+<div class="text"></div>
+<div></div>
+<div class="text"></div>
+<div></div>
+<div id="box">
+    <div class="text cl one"></div>
+    <div></div>
+    <div class="text"></div>
+    <div></div>
+</div>
+
+</body>
+</html>

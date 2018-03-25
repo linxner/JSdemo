@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="text"></div>
+<div id="demo"></div>
+<div></div>
+<div class="text"></div>
+<div></div>
+<div class="one"></div>
+<div class="text"></div>
+<div></div>
+<div class="text"></div>
+<div></div>
+</body>
+</html>
+<script>
+        function getClass(classname)
+        {
+            if(document.getElementsByClassName)
+            {
+                return document.getElementsByClassName(classname);
+            }
+            var arr = [];
+            var dom = document.getElementsByTagName("*");
+            for (var i = 0; i<dom.length; i++)
+            {
+                var txtarr = dom[i].className.split(" ");//分割class类名
+                // 以下例子分割为数组["text","cl"]
+                for (var j = 0; j < txtarr.length; j++)
+                {
+                    if (txtarr[j] == classname)
+                    {
+                        arr.push(dom[i]);//压人含有所需类名的元素
+                    }
+                }
+            }
+        }
+        //自动区分id，类名，标签，输入#demo，.demo，div可以得到相应的对象
+        function $(str){
+            var s=str.charAt(0);//得到str中的第一个字符
+            var ss=str.substr(1);//得到str中从第一个开始到最后的字符，也就是类名或id名demo
+            switch(s) {
+                case"#":
+                    return document.getElementById(ss);//如果是#，返回id名demo
+                    break;
+                case ".":
+                    return getClass(ss);//如果是.，返回类名demo
+                    break;
+                default ://如果没有，获得标签
+                    return document.getElementsByTagName(str);
+            }
+        }
+        var test = $(".text");
+        for(var i=0;i<test.length;i++)
+        {
+            test[i].style.backgroundColor = "blue";
+        }
+</script>

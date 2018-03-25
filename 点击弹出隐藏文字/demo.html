@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #text{
+            width: 200px;
+            margin: 100px;
+        }
+        #demo{
+            width: 80px;
+            background: rgba(255,255,0,0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="text">
+    直播是中国领先的弹幕式互动直播平台,可提供同时1000万人在线高清观看、赛事直播与游戏直播,热门手游直播等。包含王者荣耀,绝地求生,荒野行动等游戏直播,lol、...
+</div>
+<div id="demo"></div>
+</body>
+</html>
+<script>
+    function $(id){return document.getElementById(id)}
+    var txt;
+    $("text").onmouseup=function(event){
+        var event=event||window.event;
+        var x=event.clientX;
+        var y=event.clientY;
+        //获得选中的文字
+        if(window.getSelection){//其他浏览器的写法
+            txt=window.getSelection().toString();
+        }
+        else{
+            document.selection.createRange().text;//ie的写法
+        }
+        console.log(txt);
+        //判断是否选中文字
+        if(txt) {
+            setTimeout(function () {
+                $("demo").innerHTML = txt;
+                $("demo").style.display = "block";
+                $("demo").style.left = x + "px";
+                $("demo").style.top = y + "px";
+            }, 200)
+        }
+        document.onmousedown=function(event){
+            var event=event||window.event;
+            var targetId=event.target?event.target.id:event.srcElement.id;
+            if(targetId!="demo"){//如果操作对象不是demo、则隐藏demo
+                $("demo").style.display="none";
+            }
+        }
+    }
+
+</script>
