@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.2.0.min.js"></script>
+    <script>
+       var url=["中国","美国","日本","韩国","中国"]
+       var new_url=[];
+       for(var i=0;i<url.length;i++){
+           var items=url[i];
+           if($.inArray(items,new_url)===-1){
+                new_url.push(items);
+           }
+       }
+       console.log(new_url);
+//       console.log(url[1]);
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	a{
+		display: inline-block;
+		cursor: pointer;
+		width: 50px;
+		height: 50px;
+		background-color: #ccc;
+		text-align: center;
+		line-height: 50px;
+		margin: 10px;
+	}
+	</style>
+</head>
+<body>
+<script>
+	for (var i = 0; i < 10; i++) {
+			(function  (i) {
+				var a=document.createElement("a")
+				a.innerHTML=i;
+				a.addEventListener("click",function  (e) {
+					console.log(i)					
+				})
+				document.body.appendChild(a)
+			})(i)
+		}
+</script>
+</body>
+</html>
