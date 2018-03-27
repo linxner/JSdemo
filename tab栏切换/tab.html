@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        border: 0;
+    }
+    .box{
+        width: 360px;
+        height: 400px;
+        margin: 100px auto;
+        border: 1px solid #ccc;
+    }
+    span{
+        float: left;
+        height: 40px;
+        width: 89px;
+        line-height: 40px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-top: none;
+        margin-left: -1px;
+        background-color: #eee;
+    }
+    p{
+        display: none;
+    }
+    p.first{
+        display: block;
+    }
+    span.first{
+        display: block;
+        border-bottom: none;
+    }
+    .h{
+        background-color: #fff;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var top=document.getElementsByTagName("span");
+        var bottom=document.getElementById("w").getElementsByTagName("p");
+        for(var i= 0;i<top.length;i++){
+            top[i].index=i
+            top[i].onmousemove=function(){
+                for(var j= 0;j<top.length;j++){
+                    top[j].className=""
+                    bottom[j].style.display="none"
+                }
+                top[this.index].className="h"
+                bottom[this.index].style.display="block"
+            }
+        }
+    }
+</script>
+<body>
+<div class="box" id="w">
+        <span class="first">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    <div>
+        <p class="first"><img src="images/01big.jpg" alt=""/></p>
+    </div>
+    <div>
+        <p><img src="images/02big.jpg" alt=""/></p>
+
+    </div>
+    <div>
+        <p><img src="images/03big.jpg" alt=""/></p>
+
+    </div>
+    <div>
+        <p><img src="images/04big.jpg" alt=""/></p>
+
+    </div>
+</div>
+</body>
+</html>

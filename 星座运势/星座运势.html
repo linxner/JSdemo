@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: "SimSun";
+        }
+        .box{
+            width: 278px;
+            height: 175px;
+            padding-bottom: 6px;
+            border: 1px solid #333;
+            margin: 100px auto;
+        }
+        .dd{
+            width: 278px;
+            height: 35px;
+        }
+        .dd span {
+            float: left;
+            width: 75px;
+            height: 16px;
+            line-height: 16px;
+            font-weight: bold;
+            text-align: right;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        .dd a{
+            text-decoration: none;
+            color: #0873c0;
+        }
+        .dm{
+            float: left;
+            width: 240px;
+            height: 50px;
+            padding: 0 19px;
+        }
+        .dm .dl a{
+            float: left;
+            width: 50px;
+            height: 50px;
+            background: url(images/astroIcon.png) no-repeat 0 0;
+        }
+        .dr{
+            float: right;
+            width: 180px;
+            height: 44px;
+        }
+        .dr .drb{
+            width: 180px;
+            height: 18px;
+            margin-top: 6px;
+        }
+        .dr .drb p{
+            display: block;
+            float: left;
+            font-size: 12px;
+            line-height: 18px;
+        }
+        .dr .drb .star{
+            float: left;
+            width: 80px;
+            height: 13px;
+            background: url(images/yunshi.png) no-repeat left top;
+        }
+        .dr .drb .star .starlight{
+            float: left;
+            width: 64px;
+            height: 13px;
+            background: url(images/yunshi.png) no-repeat left bottom;
+        }
+        .dt{
+            float: left;
+            width: 240px;
+            height: 90px;
+            padding: 0 19px;
+            margin-top: 6px;
+        }
+        .dt p{
+            margin-top: 6px;
+            line-height: 26px;
+            font-size: 14px;
+        }
+        .dt a{
+             text-decoration: none;
+             color: #0873c0;
+         }
+    </style>
+    <script>
+        window.onload=function(){
+            var arr=[7,8,9,5,6,9,8,7,4,6,5,8]
+            var Arr=["周末大白羊们也不能闲着，有外出游玩的机会，注意安全出行，行驶车辆是一定要小心，避免与人争吵...",
+            "外出会有偏财机运，金牛今天如远行，会有很大的收获，也警惕内心自我膨胀的阴暗欲望...",
+                "双子宝宝们要多多注意身体方面的问题，天气乍暖还寒时节容易出状况，及时添加衣物保重身体。...",
+                "双子宝宝们要多多注意身体方面的问题，天气乍暖还寒时节容易出状况，及时添加衣物保重身体。...",
+            "休息的日子，暂时放下工作中的压力、紧张、焦虑，用心烹饪一顿饭菜，也是自我放松的好办法...",
+            "子女的问题是今天重要的一个焦点，会因为孩子的玩闹破坏房间干净整齐而恼火，别太计较孩子的成长...",
+            "今周周末，天秤宝宝们可以与伴侣、孩子，或者朋友、闺蜜一同踏青，加强家庭、亲子关系的融合。部...",
+            "会因为朋友的事情，牺牲个人时间帮助朋友，但不要因此变得太自我，容易影响朋友的关系。部分天蝎...",
+            "今天射手宝宝们的正偏财运都不错，感情问题仍然是今天射手的焦点，困在自己自卑，没有突破的情绪...",
+            "已婚的摩羯宝宝会因为自另一半的慰问关心而感到十分幸福。单身的摩羯们会有不错的桃花运，会有暗...",
+            "今天的水瓶容易敞开心扉，对人充满了信任，因此会出现更多的人给你提供帮助。部分水瓶因为怀着接...",
+            "今天的双鱼们会有高效的、实际的、突破性的学习效率，内心会很大的提升，平静的面对周遭发生的一..."]
+            function $(id){return document.getElementById(id)}
+            $("sele").onchange=function(){
+                $("url").style.backgroundPositionY=-50*(this.value)+"px";
+                $("stl").style.width=arr[this.value]*8+"px";
+                $("content").innerHTML=Arr[this.value];
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="dd">
+        <span><a href="#">星座运势</a></span>
+    </div>
+    <div class="dm">
+        <div class="dl">
+            <a href="#" id="url"></a>
+        </div>
+        <div class="dr">
+            <div class="drt">
+                <select id="sele">
+                    <option class="first" value="0">白羊座（03.21-04.19)</option>
+                    <option value="1">金牛座（04.20-05.20)</option>
+                    <option value="2">双子座（05.21-06.21)</option>
+                    <option value="3">巨蟹座（06.22-07.22)</option>
+                    <option value="4">狮子座（07.23-08.22)</option>
+                    <option value="5">处女座（08.23-09.22)</option>
+                    <option value="6">天秤座（09.23-10.23)</option>
+                    <option value="7">天蝎座（10.24-11.22)</option>
+                    <option value="8">射手座（11.22-12.21)</option>
+                    <option value="9">摩羯座（12.22-01.19)</option>
+                    <option value="10">水瓶座（01.20-02.18)</option>
+                    <option value="11">双鱼座（02.18-03.20)</option>
+                </select>
+            </div>
+            <div class="drb">
+                <p>今日运势：</p>
+                <div class="star">
+                    <div class="starlight" id="stl"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dt">
+        <p id="content">周末大白羊们也不能闲着，有外出游玩的机会，注意安全出行，行驶车辆是一定要小心，避免与人争吵...<a href="#">[详细]</a></p>
+    </div>
+</div>
+</body>
+</html>

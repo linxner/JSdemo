@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .box{
+        text-align: center;
+        margin: 100px auto;
+    }
+    span{
+        display: inline-block;
+        width: 150px;
+        height: 20px;
+        border: 1px solid #ccc;
+        text-align: left;
+        line-height: 20px;
+        font-size: 12px;
+        background-color:#eee;
+        padding-left: 20px;
+        color: #999;
+    }
+    .wrong{
+        border: 1px solid #FFAC91;
+        color: #FF6B39;
+        background: url(images/wrong.png) no-repeat #FFDCD0 4px 3px;
+    }
+    .right {
+        color: #5EFF5E;
+        background:url(images/right.png) no-repeat #DFFFDF 4px 3px;
+        border: 1px solid #ACFFAC;
+    }
+</style>
+<script>
+    window.onload=function() {
+        function $(id) {
+            return document.getElementById(id);
+        }// 定义函数  获得类名
+        $("txt").onblur = function () {
+            if (this.value == "") {
+                $("result").className = "wrong";
+                $("result").innerHTML = "内容不能为空";
+            }
+            else if (this.value > 150 || this.value < 0) {
+                $("result").className = "wrong";
+                $("result").innerHTML = "请输入合理范围";
+            }
+            else if (isNaN(this.value)) {
+                $("result").className = "wrong";
+                $("result").innerHTML = "请输入数字";
+            }
+            else{
+                $("result").className = "right";
+                $("result").innerHTML = "输入正确";
+            }
+        }
+    }
+</script>
+<body>
+<div class="box">
+    语文：<input type="text" id="txt"/> <span id="result">请输入内容</span>
+</div>
+</body>
+</html>
