@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="box">
+    <p id="p">hello word</p>
+</div>
+<script>
+    function bindEvent(elem, type, selector, fn) {
+        if (fn == null) {//判断是否使用代理
+            fn = selector;
+            selector = null;
+        }
+        elem.addEventListener(type, function (e) {
+            if (selector) {//如果有代理
+                var target= e.target;
+                if (target.matches(selector)) {
+                    fn.call(target, e);
+                }
+            }
+            else {//否则
+                fn(e);
+            }
+        })
+    }
+    //使用代理
+//    var box = document.getElementById("box");
+//    bindEvent(box, "click", "p", function () {
+//        console.log(this.innerHTML);
+//    })
+    //不使用代理
+//    var p=document.getElementById("p");
+//    bindEvent(p,"click", function (e) {
+//        console.log(p.innerHTML);
+//    })
+
+</script>
+</body>
+</html>
