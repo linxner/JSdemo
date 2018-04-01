@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .comment{
+            list-style: none;
+        }
+        .comment li{
+            float: left;
+            font-size: 40px;
+            font-family: "SimSun";
+            color: gold;
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            var none="☆";
+            var block="★";
+            $(".comment").on("mouseenter","li",function(){
+                $(this).text(block).prevAll().text(block).end().nextAll().text(none);
+            }).on("click","li",function(){
+                $(this).addClass("click").siblings().removeClass("click");
+            }).on("mouseleave",function(){
+                $(".comment li").text(none);
+                $(".click").text(block).prevAll().text(block).end().nextAll().text(none);
+            })
+        })
+    </script>
+</head>
+<body>
+<ul class="comment">
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+    <li>☆</li>
+</ul>
+</div>
+</body>
+</html>

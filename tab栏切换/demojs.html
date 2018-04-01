@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            vertical-align: top;
+        }
+        .main{
+            width: 360px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        .main .ul,.ol{
+            list-style: none;
+        }
+        .main .ul li{
+            float: left;
+            width: 90px;
+            height: 50px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #cccccc;
+            line-height: 50px;
+        }
+        .main .ol li{
+            float: left;
+            display: none;
+        }
+        .main .ul .first{
+            border-bottom: 2px solid red;
+        }
+        .main .ol .current{
+            display: block;
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".ul>li").mouseenter(function(){
+                $(this).addClass("first").siblings().removeClass("first");
+                $(".ol>li").eq($(this).index()).addClass("current").siblings().removeClass("current");
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="main">
+    <ul class="ul">
+        <li class="first">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ol class="ol">
+        <li class="current"><img src="images/01big.jpg" alt=""/></li>
+        <li><img src="images/02big.jpg" alt=""/></li>
+        <li><img src="images/03big.jpg" alt=""/></li>
+        <li><img src="images/04big.jpg" alt=""/></li>
+    </ol>
+</div>
+</body>
+</html>
