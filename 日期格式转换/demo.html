@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Dateformat(time) {
+            var time = new Date(time);
+            years = time.getFullYear();
+            month = time.getMonth()+1;
+            day = time.getDate();
+            day > 9 ? day : day="0" + day;
+            month > 9 ? month : month="0" + month;
+            return years+"/"+month+"/"+day;
+        }
+    </script>
+</body>
+
+</html>
