@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Public(name, age) {
+        this.name = name
+        this.age = age
+    }
+
+    Public.prototype = ({
+        who: function () {
+            console.log(this.name)
+        },
+        old: function () {
+            console.log(this.age)
+        }
+    })
+    var Public = new Public('Tony', 30);
+    Public.who()
+    Public.old()
+    function Private(name,age) {
+        this.name=name
+        this.age=age
+        var that=this
+        var who=function () {
+            console.log(that.name)
+        }
+        var old=function () {
+            console.log(that.age)
+        }
+        this.init=function(){
+            who()
+            old()
+        }
+    }
+    var Private=new Private('Tony',30)
+    Private.init()
+    function Private(name, age) {
+        var name = name
+        var age = age
+        var who = function () {
+            console.log(name)
+        }
+        var old = function () {
+            console.log(age)
+        }
+        this.init = function () {
+            who()
+            old()
+        }
+    }
+
+    var Private = new Private('Tony', 30)
+    Private.init()
+    Private.who()
+    Private.old()
+</script>
+</body>
+</html>
